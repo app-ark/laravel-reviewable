@@ -22,6 +22,7 @@ class ProhibiteDeactivatedUser
          */
         $user = $request->user();
         if ($user && method_exists($user, 'bootDeactivates') && $user->deactivated()) {
+            auth()->logout();
             abort(400, 'User deactivated!');
         }
         return $next($request);
