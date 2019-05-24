@@ -1,0 +1,22 @@
+{
+    "name": "app-ark/laravel-deactivated",
+    "description": "laravel Eloquent::withDeactivated()",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xiaohui.lam",
+            "email": "xiaohui.lam@aliyun.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "AppArk\\Database\\Eloquent\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6",
+        "laravel/framework": ">5.1"
+    }
+}
