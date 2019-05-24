@@ -39,7 +39,7 @@ trait Deactivates
      */
     public function getDeactivateAtColumn()
     {
-        return defined('static::DEACTIVATED_AT') ? static::DEACTIVATED_AT : 'deactivated_at';
+        return defined(static::class . '::DEACTIVATED_AT') ? static::DEACTIVATED_AT : 'deactivated_at';
     }
 
     /**
