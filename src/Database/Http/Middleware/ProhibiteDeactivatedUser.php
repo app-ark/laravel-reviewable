@@ -24,6 +24,6 @@ class ProhibiteDeactivatedUser
         if ($user && method_exists($user, 'bootDeactivates') && $user->deactivated()) {
             abort(400, 'User deactivated!');
         }
-        return $next();
+        return $next($request);
     }
 }
