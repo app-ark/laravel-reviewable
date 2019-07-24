@@ -1,12 +1,13 @@
 {
-    "name": "app-ark/laravel-deactivated",
-    "description": "laravel Eloquent::withDeactivated()",
+    "name": "app-ark/laravel-reviewable",
+    "description": "laravel eloquent reviewable",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "xiaohui.lam",
-            "email": "xiaohui.lam@aliyun.com"
+            "email": "xiaohui.lam@aliyun.com",
+            "role": "r&d"
         }
     ],
     "minimum-stability": "stable",

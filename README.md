@@ -1,8 +1,19 @@
-# laravel-deactivated
-laravel Eloquent::withDeactivated()
+# Laravel reviewable for Eloquent
+
+**Static methods**
+- Eloquent::withRejected()
+- Eloquent::withoutRejected()
+- Eloquent::onlyRejected()
+- Eloquent::withReviewed()
+- Eloquent::withoutReviewed()
+- Eloquent::onlyReviewed()
+
+**Various methods**
+- Eloquent->review()
+- Eloquent->reject()
 
 ## Author
-xxy
+Xiaohui Lam
 
 ## LICENSE
 MIT

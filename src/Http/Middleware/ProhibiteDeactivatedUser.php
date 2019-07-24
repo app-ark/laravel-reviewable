@@ -18,7 +18,7 @@ class ProhibiteDeactivatedUser
     public function handle(Request $request, $next)
     {
         /**
-         * @var Deactivates $user
+         * @var Deactivates|Authenticatable $user
          */
         $user = $request->user();
         if ($user && method_exists($user, 'bootDeactivates') && $user->deactivated()) {

@@ -3,15 +3,15 @@ namespace AppArk\Database\Eloquent;
 
 use Illuminate\Database\Schema\Blueprint;
 
-class DeactivatedFluent
+class ReviewableFluent
 {
     public static function addColumn(Blueprint $table)
     {
-        $table->timestampTz('deactivated_at')->nullable();
+        $table->tinyInteger('review')->nullable();
     }
 
     public static function dropColumn(Blueprint $table)
     {
-        $table->dropColumn('deactivated_at');
+        $table->dropColumn('review');
     }
 }
