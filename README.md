@@ -1,5 +1,11 @@
 # Laravel reviewable for Eloquent
 
+## Installation
+
+```bash
+composer require app-ark/laravel-reviewable
+```
+
 ## Usage
 
 **Enable in you model**
