@@ -17,7 +17,9 @@ class ReviewableScope implements Scope
     ];
 
     public function apply(Builder $builder, Model $model)
-    { }
+    {
+        $builder->onlyReviewed();
+    }
 
     /**
      * Extend the query builder with the needed functions.
