@@ -14,6 +14,8 @@ class ReviewableScope implements Scope
         'WithReviewed',
         'WithoutReviewed',
         'OnlyReviewed',
+        'WithUnreviewed',
+        'OnlyUnreviewed',
     ];
 
     public function apply(Builder $builder, Model $model)
@@ -122,6 +124,39 @@ class ReviewableScope implements Scope
         });
     }
 
+    /**
+     * Add the with-reviewed extension to the builder.
+     *
+     * @param Builder $builder
+     */
+    protected function addWithUnreviewed(Builder $builder)
+    {
+        $builder->macro('withUnreviewed', function (Builder $builder) {
+            return $builder;
+        });
+    }
+
+    /**
+     * Add the only-deactivated extension to the builder.
+     *
+     * @param Builder $builder
+     */
+    protected function addOnlyUnreviewed(Builder $builder)
+    {
+        $builder->macro('onlyUnreviewed', function (Builder $builder) {
+            /**
+             * @var \Illuminate\Database\Eloquent\Model|Reviewable $model
+             */
+            $model = $builder->getModel();
+
+            $builder->where(
+                $model->getQualifiedReviewableColumn(),
+                0
+            );
+
+            return $builder;
+        });
+    }
 
     /**
      * Add the with-reviewed extension to the builder.
