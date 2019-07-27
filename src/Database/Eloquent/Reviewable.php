@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Builder;
  * @method static Builder|static withReviewed
  * @method static Builder|static withoutReviewed
  * @method static Builder|static onlyReviewed
+ * @method static Builder|static withUnreviewed
+ * @method static Builder|static onlyUnreviewed
  */
 trait Reviewable
 {
