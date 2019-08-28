@@ -20,7 +20,7 @@ class ReviewableScope implements Scope
 
     public function apply(Builder $builder, Model $model)
     {
-        //$builder->onlyReviewed();
+        $builder->onlyReviewed();
     }
 
     /**
