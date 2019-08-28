@@ -92,7 +92,7 @@ class ReviewableScope implements Scope
              */
             $model = $builder->getModel();
 
-            $builder->where(
+            $builder->withoutGlobalScope($this)->where(
                 $model->getQualifiedReviewableColumn(),
                 -1
             );
@@ -114,7 +114,7 @@ class ReviewableScope implements Scope
              */
             $model = $builder->getModel();
 
-            $builder->where(
+            $builder->withoutGlobalScope($this)->where(
                 $model->getQualifiedReviewableColumn(),
                 '<>',
                 -1
@@ -132,6 +132,7 @@ class ReviewableScope implements Scope
     protected function addWithUnreviewed(Builder $builder)
     {
         $builder->macro('withUnreviewed', function (Builder $builder) {
+            $builder->withoutGlobalScope($this);
             return $builder;
         });
     }
@@ -149,7 +150,7 @@ class ReviewableScope implements Scope
              */
             $model = $builder->getModel();
 
-            $builder->where(
+            $builder->withoutGlobalScope($this)->where(
                 $model->getQualifiedReviewableColumn(),
                 0
             );
@@ -165,7 +166,7 @@ class ReviewableScope implements Scope
      */
     protected function addWithReviewed(Builder $builder)
     {
-        $builder->macro('withReviewed', function (Builder $builder) {
+        $builder->withoutGlobalScope($this)->macro('withReviewed', function (Builder $builder) {
             return $builder;
         });
     }
@@ -183,7 +184,7 @@ class ReviewableScope implements Scope
              */
             $model = $builder->getModel();
 
-            $builder->where(
+            $builder->withoutGlobalScope($this)->where(
                 $model->getQualifiedReviewableColumn(),
                 1
             );
@@ -205,7 +206,7 @@ class ReviewableScope implements Scope
              */
             $model = $builder->getModel();
 
-            $builder->where(
+            $builder->withoutGlobalScope($this)->where(
                 $model->getQualifiedReviewableColumn(),
                 '<>',
                 1
