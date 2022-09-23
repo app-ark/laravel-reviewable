@@ -63,6 +63,7 @@ class ReviewableScope implements Scope
     protected function addAllReviewable(Builder $builder)
     {
         $builder->macro('allReviewable', function (Builder $builder) {
+            $builder->withoutGlobalScope($this);
             return $builder;
         });
     }
@@ -75,6 +76,7 @@ class ReviewableScope implements Scope
     protected function addWithRejected(Builder $builder)
     {
         $builder->macro('withRejected', function (Builder $builder) {
+            $builder->withoutGlobalScope($this);
             return $builder;
         });
     }
@@ -166,7 +168,8 @@ class ReviewableScope implements Scope
      */
     protected function addWithReviewed(Builder $builder)
     {
-        $builder->withoutGlobalScope($this)->macro('withReviewed', function (Builder $builder) {
+        $builder->macro('withReviewed', function (Builder $builder) {
+            $builder->withoutGlobalScope($this);
             return $builder;
         });
     }
